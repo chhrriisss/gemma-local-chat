@@ -17,7 +17,6 @@ print(f"Loading {model_name}...")
 gemma_pipe = pipeline(
     "text-generation",
     model=model_name,
-    device_map="auto" if device.type == "cuda" else None,
     max_new_tokens=200,
     temperature=0.7,
     do_sample=True,
@@ -67,14 +66,11 @@ def clean_response(response):
     return response
 
 # Chat loop
-print("Gemma Chat with Memory — type 'exit' to quit")
-print("Using lightweight 270m model for faster responses!")
-print("-" * 50)
+print("Gemma Chat— type 'exit' to quit")
 
 while True:
     user_input = input("You: ")
     if user_input.lower() in ["exit", "quit", "bye"]:
-        print("Goodbye!")
         break
     
     if user_input.lower() == "clear":
