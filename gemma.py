@@ -1,6 +1,7 @@
 import torch
 from transformers import pipeline
-from langchain_huggingface import HuggingFacePipeline
+from langchain.llms import HuggingFacePipeline
+from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.memory import ConversationBufferMemory
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
