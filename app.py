@@ -3,27 +3,44 @@ import torch
 import os
 import pandas as pd
 import io
-import sqlite3
+import re
 from transformers import pipeline
-from langchain.llms import HuggingFacePipeline
-from langchain.embeddings import HuggingFaceEmbeddings
+
+# LangChain imports (compatible with older versions)
+try:
+    # Try new structure first
+    from langchain_community.llms import HuggingFacePipeline
+    from langchain_community.embeddings import HuggingFaceEmbeddings
+    from langchain_community.vectorstores import Chroma
+    from langchain_community.document_loaders import PyPDFLoader
+except ImportError:
+    # Fallback to old structure
+    from langchain.llms import HuggingFacePipeline
+    from langchain.embeddings import HuggingFaceEmbeddings
+    from langchain.vectorstores import Chroma
+    from langchain.document_loaders import PyPDFLoader
+
 from langchain.memory import ConversationBufferMemory
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
-from langchain_community.vectorstores import Chroma
-from langchain_community.document_loaders import PyPDFLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain.docstore.document import Document
+from langchain.schema import Document
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 
+# Smart Excel wrapper
+from smart_excel_wrapper import SmartExcelWrapper
 
+# -------------------------
 # Page config
+# -------------------------
 st.set_page_config(
-    page_title="📄📊🗄️ Gemma Universal Data Chat",
+    page_title="AI Chatbot",
     page_icon="🤖",
     layout="wide"
 )
 
-# Session state
+# -------------------------
+# Session State
+# -------------------------
 if "conversation" not in st.session_state:
     st.session_state.conversation = None
 if "chat_history" not in st.session_state:
@@ -32,253 +49,346 @@ if "model_loaded" not in st.session_state:
     st.session_state.model_loaded = False
 if "retriever" not in st.session_state:
     st.session_state.retriever = None
-if "file_name" not in st.session_state:
-    st.session_state.file_name = None
+if "pdf_name" not in st.session_state:
+    st.session_state.pdf_name = None
+if "csv_data" not in st.session_state:
+    st.session_state.csv_data = None
+if "excel_wrapper" not in st.session_state:
+    st.session_state.excel_wrapper = SmartExcelWrapper(model_path="./qwen_excel_gpu")
 
+# -------------------------
+# Enhanced Request Classification
+# -------------------------
+def classify_request_type(query):
+    """More sophisticated classification for routing"""
+    query_lower = query.lower()
+    
+    # Excel formula indicators (high precision patterns)
+    formula_patterns = [
+        r'formula\b', r'excel\b', r'=\w+\(', r'calculate.*total',
+        r'sum of', r'count.*how many', r'percentage of', r'average of',
+        r'max.*value', r'min.*value', r'total.*sales', r'count.*games'
+    ]
+    
+    # Data analysis indicators
+    analysis_patterns = [
+        r'summary', r'describe', r'overview', r'structure', r'columns',
+        r'what.*data', r'tell me about', r'analyze', r'insights',
+        r'show me.*data', r'dataset.*contains', r'rows.*columns'
+    ]
+    
+    # Check patterns with regex for better matching
+    if any(re.search(pattern, query_lower) for pattern in formula_patterns):
+        return "excel_formula"
+    elif any(re.search(pattern, query_lower) for pattern in analysis_patterns):
+        return "data_analysis"
+    else:
+        return "general"
 
+def route_query(query, csv_loaded=False):
+    """Simple router to decide which model to use"""
+    request_type = classify_request_type(query)
+    
+    if request_type == "excel_formula" and csv_loaded:
+        return "fine_tuned_model"
+    else:
+        return "gemma_2b"
+
+# -------------------------
+# Load LLM Model (Gemma 2B for reasoning)
+# -------------------------
 @st.cache_resource
 def load_model():
-    """Load Gemma model with HuggingFace pipeline"""
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    with st.spinner("Loading Gemma model..."):
-        try:
-            gemma_pipe = pipeline(
-                "text-generation",
-                model="google/gemma-2-2b-it",
-                device_map="auto" if device.type == "cuda" else None,
-                max_new_tokens=300,
-                min_new_tokens=20,
-                temperature=0.8,
-                do_sample=True,
-                return_full_text=False,
-                repetition_penalty=1.15,
-                no_repeat_ngram_size=3,
-                eos_token_id=None,
-                pad_token_id=50256
-            )
 
-            gemma_llm = HuggingFacePipeline(pipeline=gemma_pipe)
+    token_path = os.path.expanduser('~/.cache/huggingface/token')
+    token = None
+    if os.path.exists(token_path):
+        with open(token_path, 'r') as f:
+            token = f.read().strip()
+    else:
+        st.error("No Hugging Face token found!")
+        return None, device
 
-            memory = ConversationBufferMemory(
-                memory_key="chat_history",
-                return_messages=True,
-                input_key="human_input"
-            )
+    with st.spinner("Loading Gemma 2B reasoning model..."):
+        pipe = pipeline(
+            "text-generation",
+            model="google/gemma-2b-it",
+            device_map="auto" if device.type == "cuda" else None,
+            token=token,
+            trust_remote_code=True,
+            max_new_tokens=200,
+            min_new_tokens=10,
+            temperature=0.3,
+            do_sample=False,
+            return_full_text=False
+        )
 
-            prompt_template = PromptTemplate(
-                input_variables=["chat_history", "human_input", "context"],
-                template="""<bos>Previous conversation:
-{chat_history}
+        llm = HuggingFacePipeline(pipeline=pipe)
 
-Data Context:
+        memory = ConversationBufferMemory(
+            memory_key="chat_history",
+            return_messages=False,
+            input_key="human_input"
+        )
+
+        # Enhanced prompt template for better data analysis
+        prompt_template = PromptTemplate(
+            input_variables=["human_input", "context"],
+            template="""You are a helpful data analysis assistant. You can analyze datasets, explain data patterns, and provide insights.
+
+Dataset Context:
 {context}
 
-<start_of_turn>user
-{human_input}<end_of_turn>
-<start_of_turn>model
-"""
-            )
+Instructions:
+- For data analysis questions, provide clear insights based on the dataset information
+- For explanations, be concise and accurate
+- For general questions, provide helpful responses
+- Do not generate Excel formulas (that's handled separately)
 
-            conversation = LLMChain(
-                llm=gemma_llm,
-                prompt=prompt_template,
-                memory=memory,
-                verbose=False
-            )
+Question: {human_input}
 
-            return conversation, device
+Response:"""
+        )
 
-        except Exception as e:
-            st.error(f"❌ Error loading model: {e}")
-            return None, device
+        conversation = LLMChain(
+            llm=llm,
+            prompt=prompt_template,
+            memory=memory,
+            verbose=False
+        )
 
+        return conversation, device
 
-def create_table_context(df, file_name):
-    """Build Repomix-style context summary for tabular data"""
-    context = []
-    context.append(f"📂 File: {file_name}")
-    context.append(f"🔢 Shape: {df.shape[0]} rows × {df.shape[1]} columns")
-    context.append("\n=== Column Analysis ===")
-
-    for col in df.columns:
-        col_data = df[col]
-        summary = [f"\n📊 Column: {col}"]
-        summary.append(f" - Data type: {col_data.dtype}")
-
-        missing = col_data.isnull().sum()
-        if missing > 0:
-            summary.append(f" - Missing values: {missing} ({missing/len(col_data)*100:.2f}%)")
-
-        unique_vals = col_data.nunique()
-        summary.append(f" - Unique values: {unique_vals}")
-
-        if pd.api.types.is_numeric_dtype(col_data):
-            summary.append(f" - Min: {col_data.min()}, Max: {col_data.max()}, Mean: {col_data.mean():.2f}")
-        elif pd.api.types.is_object_dtype(col_data) or pd.api.types.is_categorical_dtype(col_data):
-            top_vals = col_data.value_counts().head(5).to_dict()
-            summary.append(f" - Top categories: {top_vals}")
-
-        context.append("\n".join(summary))
-
-    context.append("\n=== Sample Data ===")
-    context.append(df.head(5).to_string())
-
-    return "\n".join(context)
-
-
+# -------------------------
+# Process CSV or PDF
+# -------------------------
 def process_file(uploaded_file):
-    """Process PDF or any tabular data file (CSV, Excel, SQL)"""
-    try:
-        if uploaded_file.size > 20 * 1024 * 1024:
-            st.error("❌ File too large! Please use a smaller file (<20MB).")
-            return None
+    if uploaded_file.size > 20 * 1024 * 1024:
+        st.error("File too large! Please upload files under 20MB.")
+        return None, None
 
-        file_name = uploaded_file.name.lower()
+    ext = uploaded_file.name.lower().split('.')[-1]
 
-        # === PDF ===
-        if file_name.endswith(".pdf"):
-            with st.spinner("Processing PDF..."):
-                temp_path = "temp.pdf"
-                with open(temp_path, "wb") as f:
-                    f.write(uploaded_file.read())
-
-                docs = PyPDFLoader(temp_path).load()
-                chunks = RecursiveCharacterTextSplitter(
-                    chunk_size=400, chunk_overlap=50
-                ).split_documents(docs)
-
-                embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-                vectorstore = Chroma.from_documents(chunks, embeddings)
-                retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
-
+    if ext == "pdf":
+        with st.spinner("Processing PDF..."):
+            temp_path = "temp.pdf"
+            with open(temp_path, "wb") as f:
+                f.write(uploaded_file.read())
+            docs = PyPDFLoader(temp_path).load()
+            chunks = RecursiveCharacterTextSplitter(chunk_size=400, chunk_overlap=50).split_documents(docs)
+            embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+            vectorstore = Chroma.from_documents(chunks, embeddings)
+            retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
+            if os.path.exists(temp_path):
                 os.remove(temp_path)
-                return retriever
+            return retriever, None
 
-        # === CSV ===
-        elif file_name.endswith(".csv"):
-            df = pd.read_csv(uploaded_file)
-            context = create_table_context(df, file_name)
+    elif ext == "csv":
+        with st.spinner("Processing CSV..."):
+            df = pd.read_csv(io.StringIO(uploaded_file.getvalue().decode("utf-8")))
+            st.success(f"CSV loaded: {df.shape[0]} rows, {df.shape[1]} columns")
 
-        # === Excel ===
-        elif file_name.endswith((".xls", ".xlsx", ".xlsm", ".xlsb")):
-            df = pd.read_excel(uploaded_file, engine="openpyxl" if not file_name.endswith(".xlsb") else "pyxlsb")
-            context = create_table_context(df, file_name)
+            # Update Excel wrapper with CSV data
+            st.session_state.excel_wrapper.update_csv(df)
 
-        # === SQL (SQLite dump example) ===
-        elif file_name.endswith(".sql"):
-            conn = sqlite3.connect(":memory:")
-            sql_script = uploaded_file.read().decode("utf-8")
-            conn.executescript(sql_script)
-            tables = pd.read_sql("SELECT name FROM sqlite_master WHERE type='table';", conn)
+            # Create documents for RAG
+            docs = [
+                Document(page_content=f"Dataset Structure: {df.shape[0]} rows and {df.shape[1]} columns"),
+                Document(page_content=f"Column names: {', '.join(df.columns.tolist())}"),
+                Document(page_content=f"Data types:\n{df.dtypes.to_string()}"),
+                Document(page_content=f"Dataset preview (first 5 rows):\n{df.head().to_string()}"),
+                Document(page_content=f"Dataset summary statistics:\n{df.describe().to_string()}"),
+                Document(page_content=f"Missing values per column:\n{df.isnull().sum().to_string()}")
+            ]
+            
+            embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+            vectorstore = Chroma.from_documents(docs, embeddings)
+            retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
 
-            if tables.empty:
-                return None
+            return retriever, df
 
-            table_name = tables.iloc[0, 0]
-            df = pd.read_sql(f"SELECT * FROM {table_name}", conn)
-            conn.close()
-            context = create_table_context(df, file_name)
+    return None, None
 
-        else:
-            st.error(f"❌ Unsupported file type: {file_name}")
-            return None
-
-        # Convert context into LangChain retriever
-        docs = [Document(page_content=context)]
-        embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-        vectorstore = Chroma.from_documents(docs, embeddings)
-        retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
-
-        return retriever
-
-    except Exception as e:
-        st.error(f"⚠️ Error processing {uploaded_file.name}: {str(e)}")
-        return None
-
-
+# -------------------------
+# Get Context for LLM
+# -------------------------
 def get_context(query, retriever):
-    """Get relevant context from retriever"""
+    """Get relevant context for the query"""
     if retriever:
         try:
             docs = retriever.get_relevant_documents(query)
             context = "\n\n".join([doc.page_content for doc in docs])
-            return context[:600]
+            return context[:800]  # Increased context length
         except:
             return ""
     return ""
 
+# -------------------------
+# Main Streamlit App
+# -------------------------
+def main():
+    st.title("🤖 AI Data Assistant")
+    st.markdown("*Powered by Gemma 2B for reasoning + Fine-tuned model for Excel formulas*")
 
-def clean_response(response):
-    """Clean model output"""
-    if not response:
-        return "⚠️ I couldn't generate a response. Please try again."
+    # Load Gemma 2B model
+    if not st.session_state.model_loaded:
+        result = load_model()
+        if result:
+            st.session_state.conversation, device = result
+            st.session_state.model_loaded = True
+            st.success("✅ Models loaded successfully!")
 
-    response = response.strip()
-    stop_tokens = ["<end_of_turn>", "</s>", "<eos>", "<|endoftext|>"]
-    for token in stop_tokens:
-        if token in response:
-            response = response.split(token)[0].strip()
+    # File status indicator
+    if st.session_state.pdf_name:
+        st.info(f"📄 Active file: **{st.session_state.pdf_name}**")
+        if st.session_state.csv_data is not None:
+            with st.expander("📊 Dataset Preview"):
+                st.dataframe(st.session_state.csv_data.head(10))
+                
+                col1, col2, col3 = st.columns(3)
+                with col1:
+                    st.metric("Rows", len(st.session_state.csv_data))
+                with col2:
+                    st.metric("Columns", len(st.session_state.csv_data.columns))
+                with col3:
+                    st.metric("Missing Values", st.session_state.csv_data.isnull().sum().sum())
 
-    if response and len(response) > 10:
-        if not response.endswith(('.', '!', '?', ':')):
-            last_punct = max(response.rfind('.'), response.rfind('!'), response.rfind('?'))
-            if last_punct > len(response) // 2:
-                response = response[:last_punct + 1]
-            else:
-                response += "."
-    return response
+    # Show chat history
+    for msg in st.session_state.chat_history:
+        with st.chat_message(msg["role"]):
+            st.markdown(msg["content"])
 
+    # Input + Upload layout
+    col1, col2 = st.columns([5, 1])
+    with col1:
+        user_input = st.chat_input("Ask about your data, request Excel formulas, or general questions...")
+    with col2:
+        uploaded_file = st.file_uploader("📁", type=["pdf", "csv"], label_visibility="collapsed")
 
-# === UI ===
-st.title("📄📊🗄️ Gemma Universal Data Chat")
-st.caption("Chat with PDFs, Excel, CSV, and SQL datasets")
+    # Handle file upload
+    if uploaded_file and uploaded_file.name != st.session_state.pdf_name:
+        retriever, df = process_file(uploaded_file)
+        if retriever:
+            st.session_state.retriever = retriever
+            st.session_state.csv_data = df
+            st.session_state.pdf_name = uploaded_file.name
+            st.rerun()  # Refresh to show new file status
 
-if not st.session_state.model_loaded:
-    result = load_model()
-    if result[0]:
-        st.session_state.conversation, device = result
-        st.session_state.model_loaded = True
-        st.success(f"✅ Model loaded on {device}!")
-    else:
-        st.stop()
+    # Handle user input with improved routing
+    if user_input and st.session_state.model_loaded:
+        st.session_state.chat_history.append({"role": "user", "content": user_input})
 
-# Chat history
-for message in st.session_state.chat_history:
-    with st.chat_message(message["role"]):
-        st.write(message["content"])
+        with st.chat_message("user"):
+            st.markdown(user_input)
 
-# Input + file upload
-col1, col2 = st.columns([5, 1])
-with col1:
-    user_input = st.chat_input("Ask about your data or PDF...")
-with col2:
-    uploaded_file = st.file_uploader("📁", type=["pdf", "csv", "xls", "xlsx", "xlsm", "xlsb", "sql"], label_visibility="collapsed")
+        with st.chat_message("assistant"):
+            with st.spinner("Processing..."):
+                # Route the query to appropriate model
+                model_to_use = route_query(user_input, st.session_state.csv_data is not None)
+                request_type = classify_request_type(user_input)
+                
+                if model_to_use == "fine_tuned_model" and request_type == "excel_formula":
+                    # Use fine-tuned model for Excel formulas
+                    excel_formula = st.session_state.excel_wrapper.generate_smart_formula(user_input)
+                    
+                    if excel_formula and excel_formula.startswith('=') and 'could not generate' not in excel_formula.lower():
+                        # Display the formula
+                        st.markdown("### 📊 Excel Formula")
+                        st.code(excel_formula, language='excel')
+                        
+                        # Use Gemma 2B to explain the formula
+                        explanation_prompt = f"""Explain this Excel formula in simple terms: {excel_formula}
 
-# Handle file upload
-if uploaded_file and uploaded_file.name != st.session_state.file_name:
-    retriever = process_file(uploaded_file)
-    if retriever:
-        st.session_state.retriever = retriever
-        st.session_state.file_name = uploaded_file.name
-        st.success(f"✅ {uploaded_file.name} ready for chat!")
+Original question: {user_input}
 
-# Handle chat
-if user_input:
-    st.session_state.chat_history.append({"role": "user", "content": user_input})
-    with st.chat_message("user"):
-        st.write(user_input)
+Provide a brief, clear explanation of what this formula calculates."""
+                        
+                        explanation = st.session_state.conversation.run(
+                            human_input=explanation_prompt,
+                            context=""
+                        )
+                        
+                        st.markdown("### 💡 Explanation")
+                        st.markdown(explanation)
+                        
+                        full_response = f"**Excel Formula:**\n```excel\n{excel_formula}\n```\n\n**Explanation:**\n{explanation}"
+                    else:
+                        # Fallback to Gemma if formula generation fails
+                        st.warning("Formula generation failed, using general analysis...")
+                        context = get_context(user_input, st.session_state.retriever)
+                        response = st.session_state.conversation.run(
+                            human_input=user_input,
+                            context=context
+                        )
+                        st.markdown(response)
+                        full_response = response
 
-    with st.chat_message("assistant"):
-        with st.spinner("Thinking..."):
-            try:
-                context = get_context(user_input, st.session_state.retriever)
-                response = st.session_state.conversation.run(
-                    human_input=user_input, context=context
-                )
-                response = clean_response(response)
-                st.write(response)
-                st.session_state.chat_history.append({"role": "assistant", "content": response})
-            except Exception as e:
-                error_msg = f"❌ Error: {e}"
-                st.error(error_msg)
-                st.session_state.chat_history.append({"role": "assistant", "content": error_msg})
+                else:
+                    # Use Gemma 2B for data analysis, summaries, and general questions
+                    context = get_context(user_input, st.session_state.retriever)
+                    response = st.session_state.conversation.run(
+                        human_input=user_input,
+                        context=context
+                    )
+                    st.markdown(response)
+                    full_response = response
+
+                st.session_state.chat_history.append({"role": "assistant", "content": full_response})
+
+    # Sidebar with helpful information
+    with st.sidebar:
+        st.header("🔧 Model Status")
+        
+        if st.session_state.model_loaded:
+            st.success("✅ Gemma 2B (Reasoning)")
+        else:
+            st.error("❌ Gemma 2B not loaded")
+            
+        if st.session_state.excel_wrapper.model_loaded:
+            st.success("✅ Fine-tuned (Excel)")
+        else:
+            st.warning("⚠️ Fine-tuned model not loaded")
+        
+        st.divider()
+        
+        st.header("💡 Usage Tips")
+        st.markdown("""
+        **For Excel Formulas:**
+        - "Calculate the total sales"
+        - "Count how many games from 2023"
+        - "What percentage are Action games?"
+        - "Average revenue by publisher"
+        
+        **For Data Analysis:**
+        - "Summarize this dataset"
+        - "What columns are available?"
+        - "Show me data insights"
+        - "Describe the data structure"
+        
+        **General Questions:**
+        - Ask anything about the data
+        - Request explanations
+        - Get recommendations
+        """)
+        
+        if st.session_state.csv_data is not None:
+            st.divider()
+            st.header("📊 Dataset Info")
+            st.markdown(f"**Rows:** {len(st.session_state.csv_data)}")
+            st.markdown(f"**Columns:** {len(st.session_state.csv_data.columns)}")
+            
+            with st.expander("Column Details"):
+                for i, col in enumerate(st.session_state.csv_data.columns):
+                    st.markdown(f"**{chr(65+i)}:** {col}")
+        
+        st.divider()
+        
+        # Clear chat button
+        if st.button("🗑️ Clear Chat History", type="secondary"):
+            st.session_state.chat_history = []
+            st.session_state.conversation.memory.clear()
+            st.rerun()
+
+if __name__ == "__main__":
+    main()

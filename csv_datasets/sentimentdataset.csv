@@ -1,0 +1,733 @@
+,Unnamed: 0,Text,Sentiment,Timestamp,User,Platform,Hashtags,Retweets,Likes,Country,Year,Month,Day,Hour
+0,0, Enjoying a beautiful day at the park!              , Positive  ,1/15/2023 12:30, User123      , Twitter  , #Nature #Park                            ,15,30, USA      ,2023,1,15,12
+1,1, Traffic was terrible this morning.                 , Negative  ,1/15/2023 8:45, CommuterX    , Twitter  , #Traffic #Morning                        ,5,10, Canada   ,2023,1,15,8
+2,2, Just finished an amazing workout! 💪               , Positive  ,1/15/2023 15:45, FitnessFan   , Instagram , #Fitness #Workout                        ,20,40, USA        ,2023,1,15,15
+3,3, Excited about the upcoming weekend getaway!        , Positive  ,1/15/2023 18:20, AdventureX   , Facebook , #Travel #Adventure                       ,8,15, UK       ,2023,1,15,18
+4,4, Trying out a new recipe for dinner tonight.        , Neutral   ,1/15/2023 19:55, ChefCook     , Instagram , #Cooking #Food                           ,12,25, Australia ,2023,1,15,19
+5,5, Feeling grateful for the little things in life.    , Positive  ,1/16/2023 9:10, GratitudeNow , Twitter  , #Gratitude #PositiveVibes              ,25,50, India    ,2023,1,16,9
+6,6, Rainy days call for cozy blankets and hot cocoa.   , Positive  ,1/16/2023 14:45, RainyDays    , Facebook , #RainyDays #Cozy                         ,10,20, Canada   ,2023,1,16,14
+7,7, The new movie release is a must-watch!             , Positive  ,1/16/2023 19:30, MovieBuff    , Instagram , #MovieNight #MustWatch                  ,15,30, USA    ,2023,1,16,19
+8,8, Political discussions heating up on the timeline.  , Negative  ,1/17/2023 8:00, DebateTalk   , Twitter  , #Politics #Debate                       ,30,60, USA      ,2023,1,17,8
+9,9, Missing summer vibes and beach days.               , Neutral   ,1/17/2023 12:20, BeachLover   , Facebook , #Summer #BeachDays                      ,18,35, Australia ,2023,1,17,12
+10,10, Just published a new blog post. Check it out!      , Positive  ,1/17/2023 15:15, BloggerX     , Instagram , #Blogging #NewPost                      ,22,45,USA,2023,1,17,15
+11,11, Feeling a bit under the weather today.             , Negative  ,1/18/2023 10:30, WellnessCheck, Twitter  , #SickDay #Health                        ,7,15, Canada   ,2023,1,18,10
+12,12, Exploring the city's hidden gems.                  , Positive  ,1/18/2023 14:50, UrbanExplorer, Facebook , #CityExplore #HiddenGems                ,12,25, UK       ,2023,1,18,14
+13,13," New year, new fitness goals! 💪                    ", Positive  ,1/18/2023 18:00, FitJourney   , Instagram , #NewYear #FitnessGoals                  ,28,55, USA        ,2023,1,18,18
+14,14, Technology is changing the way we live.            , Neutral   ,1/19/2023 9:45, TechEnthusiast, Twitter  , #Tech #Innovation                       ,15,30, India    ,2023,1,19,9
+15,15, Reflecting on the past and looking ahead.          , Positive  ,1/19/2023 13:20, Reflections  , Facebook , #Reflection #Future                     ,20,40, USA      ,2023,1,19,13
+16,16, Just adopted a cute furry friend! 🐾              , Positive  ,1/19/2023 17:10, PetAdopter   , Instagram , #PetAdoption #FurryFriend               ,15,30, Canada    ,2023,1,19,17
+17,17, Late-night gaming session with friends.            , Positive  ,1/20/2023 0:05, GamerX       , Twitter  , #Gaming #LateNight                      ,18,35, UK       ,2023,1,20,0
+18,18, Attending a virtual conference on AI.              , Neutral   ,1/20/2023 11:30, TechConference, Facebook , #AI #TechConference                     ,25,50,USA,2023,1,20,11
+19,19, Winter blues got me feeling low.                   , Negative  ,1/20/2023 15:15, WinterBlues  , Instagram , #WinterBlues #Mood                      ,8,15, USA       ,2023,1,20,15
+20,20, Sipping coffee and enjoying a good book.           , Positive  ,1/21/2023 8:40, Bookworm     , Twitter  , #Reading #CoffeeTime                    ,22,45, India    ,2023,1,21,8
+21,21, Exploring the world of virtual reality.            , Positive  ,1/21/2023 13:20, VRExplorer   , Facebook , #VR #VirtualReality                     ,15,30,USA,2023,1,21,13
+22,22, Productive day ticking off my to-do list.          , Positive  ,1/21/2023 16:45, ProductivityPro, Instagram , #Productivity #WorkFromHome           ,30,60, USA ,2023,1,21,16
+23,23, Just finished a challenging workout routine.       , Positive  ,1/22/2023 9:15, FitnessWarrior, Twitter  , #Fitness #ChallengeAccepted             ,20,40, UK       ,2023,1,22,9
+24,24, Celebrating a milestone at work! 🎉               , Positive  ,1/22/2023 14:30, CareerMilestone, Facebook , #Career #Milestone                      ,12,25, Canada  ,2023,1,22,14
+25,25, Sunday brunch with friends.                        , Positive  ,1/22/2023 12:00, BrunchBuddy  , Instagram , #Brunch #Friends                       ,15,30, UK ,2023,1,22,12
+27,28, Learning a new language for personal growth.       , Positive  ,1/23/2023 16:20, LanguageLearner, Facebook , #LanguageLearning #PersonalGrowth       ,25,50, India     ,2023,1,23,16
+28,29, Quiet evening with a good book.                    , Positive  ,1/23/2023 19:45, BookLover    , Instagram , #Reading #QuietTime                     ,15,30, Australia ,2023,1,23,19
+29,30, Reflecting on the importance of mental health.     , Positive  ,1/24/2023 11:30, MentalHealthMatters, Twitter  , #MentalHealth #SelfCare                 ,22,45, USA      ,2023,1,24,11
+30,31, New painting in progress! 🎨                       , Positive  ,1/24/2023 15:00, ArtistInAction, Facebook , #Art #PaintingInProgress             ,12,25, Canada ,2023,1,24,15
+31,32, Weekend road trip to explore scenic views.         , Positive  ,1/24/2023 17:30, RoadTripper  , Instagram , #RoadTrip #ScenicViews                  ,18,35, UK        ,2023,1,24,17
+32,33, Enjoying a cup of tea and watching the sunset.     , Positive  ,1/25/2023 18:00, SunsetWatcher, Twitter  , #TeaTime #Sunset                       ,15,30, India    ,2023,1,25,18
+33,34, Coding a new project with enthusiasm.              , Positive  ,1/25/2023 13:15, CodeEnthusiast, Facebook , #Coding #Enthusiasm                   ,30,60, USA ,2023,1,25,13
+34,35, Feeling inspired after attending a workshop.       , Positive  ,1/26/2023 9:45, WorkshopAttendee, Instagram , #Inspiration #Workshop                  ,25,50,USA,2023,1,26,9
+35,36, Winter sports day at the local park.               , Positive  ,1/26/2023 14:20, WinterSports  , Twitter  , #WinterSports #Fun                     ,15,30, Canada   ,2023,1,26,14
+36,37, Quality time with family this weekend.             , Positive  ,1/26/2023 17:40, FamilyTime   , Facebook , #FamilyTime #Weekend                    ,22,45, UK        ,2023,1,26,17
+37,38, Attending a live music concert tonight.            , Positive  ,1/27/2023 20:00, MusicLover   , Instagram , #Music #ConcertNight                  ,18,35, USA ,2023,1,27,20
+38,39, Practicing mindfulness with meditation.            , Positive  ,1/27/2023 12:30, MindfulMoments, Twitter  , #Mindfulness #Meditation               ,15,30, India    ,2023,1,27,12
+39,40, Trying out a new dessert recipe.                   , Positive  ,1/27/2023 16:10, DessertExplorer, Facebook , #Dessert #Cooking                      ,12,25, Canada ,2023,1,27,16
+40,41, Excited about the upcoming gaming tournament.      , Positive  ,1/28/2023 9:00, GamingEnthusiast, Instagram , #Gaming #Tournament                     ,30,60,USA,2023,1,28,9
+41,42, Planning a garden makeover for spring.             , Positive  ,1/28/2023 14:45, GardenPlanner , Twitter  , #Gardening #Spring                     ,25,50, USA      ,2023,1,28,14
+42,43, Celebrating a friend's birthday tonight! 🎂       , Positive  ,1/28/2023 19:30, BirthdayBash , Facebook , #Birthday #Celebration                  ,15,30, UK ,2023,1,28,19
+43,44, Feeling accomplished after a productive day.       , Positive  ,1/29/2023 17:00, ProductivityWin, Instagram , #Accomplished #Success               ,22,45, India ,2023,1,29,17
+44,45, A cozy evening with a good movie.                 , Positive  ,1/29/2023 20:20, MovieNight   , Twitter  , #CozyNight #MovieTime                   ,18,35, Canada   ,2023,1,29,20
+45,46, Exploring local art galleries this weekend.        , Positive  ,1/30/2023 11:30, ArtExplorer  , Facebook , #Art #GalleryExplore                    ,15,30, USA      ,2023,1,30,11
+46,47, New book release from my favorite author!          , Positive  ,1/30/2023 15:45, BookwormX    , Instagram , #BookRelease #FavoriteAuthor           ,12,25, UK   ,2023,1,30,15
+47,48, Attending a virtual reality meetup.                , Positive  ,1/30/2023 18:30, VRMeetup     , Twitter  , #VRMeetup #VirtualReality               ,28,55, India    ,2023,1,30,18
+48,49, Reflecting on the beauty of nature.                , Positive  ,1/31/2023 10:45, NatureLover  , Facebook , #Nature #Reflection                     ,15,30, Australia ,2023,1,31,10
+49,50, Cooking a special dinner for loved ones.           , Positive  ,1/31/2023 19:00, ChefAtHome   , Instagram , #Cooking #SpecialDinner                ,20,40, USA       ,2023,1,31,19
+50,51, Feeling optimistic about the week ahead.           , Positive  ,1/31/2023 16:20, OptimisticMindset, Twitter  , #Optimism #NewWeek                     ,15,30, Canada   ,2023,1,31,16
+51,52, Starting a new fitness challenge tomorrow! 💪     , Positive  ,2/1/2023 8:00, FitnessChallenge, Facebook , #FitnessChallenge #NewBeginnings       ,22,45, UK         ,2023,2,1,8
+52,53, Sunday bike ride through scenic trails.           , Positive  ,2/1/2023 13:30, BikeExplorer  , Instagram , #BikeRide #ScenicTrails                ,18,35, USA     ,2023,2,1,13
+53,55, Can't believe the injustice happening in our society., Anger        ,2/11/2023 9:30, SocialJustice   , Twitter  , #Injustice #Angry                            ,20,40, Canada     ,2023,2,11,9
+54,56, Feeling a sense of fear after watching a thriller movie. , Fear         ,2/11/2023 21:15, ThrillerFan     , Instagram , #Fear #ThrillerMovie                         ,15,30, USA          ,2023,2,11,21
+55,57, Heartbroken after hearing the news about a natural disaster. , Sadness      ,2/12/2023 14:45, EmpathyFirst    , Facebook , #Sadness #NaturalDisaster                    ,25,50, India      ,2023,2,12,14
+56,58, The state of the world's environment is just disgusting. , Disgust      ,2/12/2023 18:20, EcoAwareness    , Twitter  , #Disgust #Environment                        ,18,35, UK         ,2023,2,12,18
+57,59, Pure happiness: celebrating a loved one's achievement! , Happiness    ,2/13/2023 10:00, ProudFriend     , Instagram , #Happiness #Celebration                   ,30,60, USA ,2023,2,13,10
+58,60, Laughter is the best medicine—enjoying a comedy show. , Joy          ,2/13/2023 19:30, ComedyFan       , Facebook , #Joy #ComedyShow                             ,22,45, Canada    ,2023,2,13,19
+59,61, Sharing love and positive vibes with everyone! ❤️      , Love         ,2/14/2023 8:30, LoveSpreader    , Twitter  , #Love #SpreadLove                            ,15,30, Australia  ,2023,2,14,8
+60,62, An amusing incident brightened up my day!               , Amusement    ,2/14/2023 14:20, AmusedSoul      , Instagram , #Amusement #FunTimes                         ,18,35, UK           ,2023,2,14,14
+61,63, Enjoying a quiet evening with a book and some tea.      , Enjoyment    ,2/14/2023 19:45, BookLoverAgain  , Facebook , #Enjoyment #BookTime                         ,25,50, Canada       ,2023,2,14,19
+62,64, Admiring the beauty of nature during a peaceful hike.   , Admiration   ,2/15/2023 11:30, NatureAdmirer   , Twitter  , #Admiration #Nature                         ,20,40, USA       ,2023,2,15,11
+63,65, Sending affectionate vibes to all my followers!          , Affection    ,2/15/2023 16:00, AffectionSender , Instagram , #Affection #PositiveVibes                   ,15,30,USA,2023,2,15,16
+64,66, Experiencing awe at the breathtaking sunset.            , Awe          ,2/15/2023 20:30, AweStruck       , Facebook , #Awe #Breathtaking                          ,22,45, Australia   ,2023,2,15,20
+65,67, Disappointed with the service at a local restaurant.    , Disappointed ,2/16/2023 9:00, FoodieGoneWrong , Twitter  , #Disappointed #BadService                   ,18,35, India      ,2023,2,16,9
+66,68, A surprise gift from a friend made my day!              , Surprise     ,2/16/2023 14:45, HappySurprise   , Instagram , #Surprise #Gift                              ,25,50, USA          ,2023,2,16,14
+67,69, Finding acceptance in the midst of life's challenges.   , Acceptance   ,2/16/2023 18:20, AcceptanceSeeker, Facebook , #Acceptance #Challenges                     ,15,30, Canada     ,2023,2,16,18
+68,70, Overflowing with adoration for my adorable pet! 🐾      , Adoration    ,2/17/2023 10:45, PetAdorer       , Twitter  , #Adoration #PetLove                         ,22,45, UK        ,2023,2,17,10
+69,71, Anticipating a thrilling adventure in the coming weeks. , Anticipation ,2/17/2023 7:30, AdventureAwaits  , Instagram , #Anticipation #Adventure                    ,20,40,USA,2023,2,17,7
+70,72, A bitter experience turned into a valuable lesson.      , Bitter       ,2/17/2023 15:00, LearnFromBitter , Facebook , #BitterLesson #Growth                      ,18,35, USA       ,2023,2,17,15
+71,73, Finding calmness in the midst of a busy day.            , Calmness     ,2/18/2023 9:30, ZenMaster       , Twitter  , #Calmness #PeacefulMind                    ,15,30, India     ,2023,2,18,9
+72,74, Confusion clouds my mind as I navigate through decisions., Confusion    ,2/18/2023 14:20, ConfusedMind    , Instagram , #Confusion #DecisionMaking                 ,25,50, UK   ,2023,2,18,14
+73,75, Excitement building up for the upcoming vacation!       , Excitement   ,2/18/2023 18:45, VacationDreamer , Facebook , #Excitement #TravelPlans                   ,22,45, Canada    ,2023,2,18,18
+74,76, Kindness witnessed today restored my faith in humanity. , Kind         ,2/19/2023 11:30, KindnessPrevails, Twitter  , #Kindness #Humanity                        ,20,40, USA       ,2023,2,19,11
+75,77, Pride in achieving a personal milestone.               , Pride        ,2/19/2023 16:00, PersonalAchiever, Instagram , #Pride #Milestone                           ,30,60, Australia    ,2023,2,19,16
+76,78, A moment of shame for not standing up against injustice. , Shame        ,2/19/2023 19:45, ReflectiveSelf  , Facebook , #Shame #Injustice                           ,15,30, India      ,2023,2,19,19
+77,79, Fuming with anger after a heated argument.            , Anger        ,2/20/2023 9:30, AngryDebater    , Twitter  , #Anger #Argument                             ,20,40, Canada     ,2023,2,20,9
+78,80, The fear of the unknown is keeping me up at night.    , Fear         ,2/20/2023 21:15, FearfulDreamer  , Instagram , #Fear #Unknown                               ,15,30, USA          ,2023,2,20,21
+79,81, Heartfelt sadness after bidding farewell to a dear friend. , Sadness      ,2/21/2023 14:45, FarewellHeart   , Facebook , #Sadness #Farewell                          ,25,50, India      ,2023,2,21,14
+80,82, The state of corruption in our society is utterly disgusting. , Disgust      ,2/21/2023 18:20, AntiCorruption  , Twitter  , #Disgust #Corruption                         ,18,35, UK         ,2023,2,21,18
+81,83, Overflowing happiness: welcoming a new family member!  , Happiness    ,2/22/2023 10:00, NewParentJoy    , Instagram , #Happiness #NewFamilyMember                 ,30,60, UK           ,2023,2,22,10
+82,84, Laughter is the key to joy—attending a stand-up comedy show. , Joy          ,2/22/2023 19:30, StandUpFan      , Facebook , #Joy #StandUpComedy                         ,22,45, Canada    ,2023,2,22,19
+83,85, Sending love to all my followers on this beautiful day! ❤️ , Love         ,2/23/2023 8:30, LoveSender      , Twitter  , #Love #SpreadLove                            ,15,30, Australia  ,2023,2,23,8
+84,86, Amused by the antics of my pet—it's pure amusement!      , Amusement    ,2/23/2023 14:20, PetAmuser       , Instagram , #Amusement #PetAntics                       ,18,35, UK           ,2023,2,23,14
+85,87, Enjoying every moment of this trip—pure enjoyment!      , Enjoyment    ,2/23/2023 19:45, TravelExplorer  , Facebook , #Enjoyment #Travel                           ,25,50, USA ,2023,2,23,19
+86,88, Admiring the dedication of volunteers at a local charity. , Admiration   ,2/24/2023 11:30, CharityAdmirer  , Twitter  , #Admiration #Volunteers                     ,20,40, USA        ,2023,2,24,11
+87,89, Sending affectionate vibes to friends and family.        , Affection    ,2/24/2023 16:00, FamilyLover     , Instagram , #Affection #FamilyLove                      ,15,30,USA,2023,2,24,16
+88,90, Awe-struck by the beauty of the night sky.               , Awe          ,2/24/2023 20:30, Stargazer       , Facebook , #Awe #StarryNight                        ,22,45, Australia ,2023,2,24,20
+89,91, Disappointed with the lack of progress in a personal project. , Disappointed ,2/25/2023 9:00, ProjectStruggle , Twitter  , #Disappointed #Project                     ,18,35, India      ,2023,2,25,9
+90,92, A surprise visit from an old friend brought tears of joy. , Surprise     ,2/25/2023 14:45, JoyfulReunion   , Instagram , #Surprise #OldFriends                       ,25,50, USA          ,2023,2,25,14
+91,93, Embracing acceptance of life's ups and downs.           , Acceptance   ,2/25/2023 18:20, LifeAcceptance  , Facebook , #Acceptance #LifeJourney                   ,15,30, Canada     ,2023,2,25,18
+92,94, Overflowing adoration for a cute rescue puppy! 🐶       , Adoration    ,2/26/2023 10:45, PuppyAdmirer    , Twitter  , #Adoration #PuppyLove                       ,22,45, UK         ,2023,2,26,10
+93,95, Anticipating the release of a much-awaited movie.       , Anticipation ,2/26/2023 7:30, MovieBuff2      , Instagram , #Anticipation #MovieRelease                 ,20,40, Australia    ,2023,2,26,7
+94,96, Bitter experience at the customer service department.   , Bitter       ,2/26/2023 15:00, CustomerWoes    , Facebook , #BitterExperience #CustomerService         ,18,35, USA       ,2023,2,26,15
+95,97, Finding calmness amidst the chaos of daily life.        , Calmness     ,2/27/2023 9:30, CalmSoul        , Twitter  , #Calmness #InnerPeace                      ,15,30, India     ,2023,2,27,9
+96,98, Confusion reigns as I try to make sense of recent events., Confusion    ,2/27/2023 14:20, ConfusedMind2   , Instagram , #Confusion #MakingSense                    ,25,50, UK   ,2023,2,27,14
+97,99, Excitement building up for a surprise birthday party.   , Excitement   ,2/27/2023 18:45, BirthdayExcite  , Facebook , #Excitement #SurpriseParty                 ,22,45, Canada ,2023,2,27,18
+98,100, Witnessed an act of kindness that made my day.          , Kind         ,2/28/2023 11:30, KindnessObserver, Twitter  , #Kindness #ActsOfKindness                  ,20,40, USA       ,2023,2,28,11
+99,101, Pride in completing a challenging fitness challenge.    , Pride        ,2/28/2023 16:00, FitAchiever     , Instagram , #Pride #FitnessChallengeCompleted          ,30,60, UK            ,2023,2,28,16
+100,102, A moment of shame for not speaking up against injustice., Shame        ,2/28/2023 19:45, ReflectiveSelf2 , Facebook , #Shame #Injustice                           ,15,30, India     ,2023,2,28,19
+101,103, Reflecting on the beauty of diversity in our world.     , Acceptance   ,3/1/2023 10:45, DiversityLover  , Twitter  , #Acceptance #Diversity                      ,22,45, Australia ,2023,3,1,10
+102,104, Excitement for a quiet evening with a good book.        , Excitement   ,3/1/2023 13:30, BookwormJoy     , Instagram , #Excitement #BookTime                       ,18,35, USA          ,2023,3,1,13
+103,105, Feeling bitter about the unfairness in the workplace.   , Bitter       ,3/1/2023 17:45, WorkplaceWoes   , Twitter  , #Bitter #Unfairness                         ,15,30, Canada    ,2023,3,1,17
+104,106, Calmness prevails as I practice mindfulness.            , Calmness     ,3/2/2023 18:00, MindfulMe       , Facebook , #Calmness #Mindfulness                      ,15,30, UK        ,2023,3,2,18
+105,107, Confusion surrounds me as I navigate through life's choices. , Confusion ,3/2/2023 13:15, ConfusedMind3   , Instagram , #Confusion #LifeChoices                     ,30,60, USA   ,2023,3,2,13
+106,108, Excitement for a weekend road trip to explore new places. , Excitement ,3/2/2023 16:45, RoadTripper2    , Twitter  , #Excitement #WeekendAdventure               ,25,50, India     ,2023,3,2,16
+107,109, Kindness witnessed today restores my faith in humanity.  , Kind         ,3/3/2023 11:30, KindnessPrevails2, Facebook , #Kindness #HumanityRestored                 ,22,45, USA       ,2023,3,3,11
+108,110, Pride in accomplishing personal and professional goals.  , Pride        ,3/3/2023 14:30, GoalAchiever    , Instagram , #Pride #Accomplishments                     ,12,25, Canada ,2023,3,3,14
+109,111, Shame for not being true to my values in a difficult situation., Shame ,3/3/2023 12:00, ReflectiveSelf3 , Twitter  , #Shame #Integrity                           ,15,30, UK        ,2023,3,3,12
+110,112," Revisiting old memories, feeling a sense of elation. ", Elation       ,5/15/2010 15:30, NostalgiaFan    , Twitter  , #Elation #Memories                             ,20,40, Canada    ,2010,5,15,15
+111,113, The victory of our team brought euphoria to the city. , Euphoria      ,8/10/2021 21:15, SportsFanatic   , Instagram , #Euphoria #Victory                             ,15,30, USA      ,2021,8,10,21
+112,114," Embracing the beauty of nature, a moment of contentment. ", Contentment   ,6/20/2011 14:45, NatureLover2    , Facebook , #Contentment #Nature                           ,25,50, India       ,2011,6,20,14
+113,115," Meditating by the serene lake, finding inner peace.   ", Serenity      ,2/12/2022 18:20, ZenMaster2      , Twitter  , #Serenity #Meditation                          ,18,35, UK          ,2022,2,12,18
+114,116, Overflowing with gratitude for life's blessings.      , Gratitude     ,11/25/2012 10:00, ThankfulHeart   , Instagram , #Gratitude #Blessed                            ,30,60, Australia   ,2012,11,25,10
+115,117," Hopeful for a brighter tomorrow, despite challenges.  ", Hope          ,4/5/2013 19:30, OptimisticSoul  , Facebook , #Hope #Optimism                                ,22,45, USA      ,2013,4,5,19
+116,118, Empowered to make a difference in my community.        , Empowerment   ,9/14/2014 8:30, CommunityLeader , Twitter  , #Empowerment #Community                        ,15,30, UK       ,2014,9,14,8
+117,119, Compassion in action: supporting a local charity event. , Compassion    ,7/18/2015 14:20, CharitySupporter, Instagram , #Compassion #CharityEvent                   ,18,35, Canada ,2015,7,18,14
+118,120," A moment of tenderness, connecting with loved ones.    ", Tenderness    ,2/23/2016 19:45, LovingHeart     , Facebook , #Tenderness #FamilyTime                       ,25,50, UK          ,2016,2,23,19
+119,121, Arousal of excitement as I await a special announcement., Arousal       ,10/30/2017 11:30, ExcitementFan   , Twitter  , #Arousal #Excitement                           ,20,40, Australia ,2017,10,30,11
+120,122, Enthusiastically diving into a new project.            , Enthusiasm    ,6/15/2018 16:00, ProjectEnthusiast, Instagram , #Enthusiasm #NewProject                       ,15,30, USA  ,2018,6,15,16
+121,123, Feeling a sense of fulfillment after reaching a milestone., Fulfillment  ,3/28/2019 18:20, MilestoneAchiever, Facebook , #Fulfillment #Milestone                       ,22,45, India     ,2019,3,28,18
+122,124, Reverence for the beauty of a historic landmark.       , Reverence     ,11/11/2019 15:00, HistoryLover    , Twitter  , #Reverence #History                           ,18,35, UK      ,2019,11,11,15
+123,125, Elation after a surprise reunion with old friends.    , Elation       ,4/2/2020 9:30, JoyfulReunion2  , Instagram , #Elation #OldFriends                          ,25,50, Canada      ,2020,4,2,9
+124,126, The euphoria of a live music concert under the stars.  , Euphoria      ,6/19/2021 14:45, MusicEnthusiast , Facebook , #Euphoria #LiveMusic                          ,15,30, USA ,2021,6,19,14
+125,127, Contentment in the simplicity of a quiet Sunday.       , Contentment   ,8/15/2010 10:00, SimpleJoys      , Twitter  , #Contentment #SundayMood                      ,30,60, Australia ,2010,8,15,10
+126,128, Serenity found in the pages of a favorite book.        , Serenity      ,9/22/2011 19:30, BookLover3      , Instagram , #Serenity #BookTime                           ,22,45, UK          ,2011,9,22,19
+127,129, Gratitude for the support received during tough times. , Gratitude     ,3/10/2012 8:30, SupportiveFriend, Facebook , #Gratitude #Supportive                        ,15,30, India     ,2012,3,10,8
+128,130, Hopeful about the possibilities of a new journey.      , Hope          ,12/5/2013 16:00, JourneyOptimist , Twitter  , #Hope #NewBeginnings                          ,18,35, Canada    ,2013,12,5,16
+129,131, Empowerment through learning and personal growth.      , Empowerment   ,7/20/2014 11:30, GrowthSeeker    , Instagram , #Empowerment #PersonalGrowth                  ,25,50,USA,2014,7,20,11
+130,132, Compassion towards those in need during the holidays.  , Compassion    ,12/22/2015 14:20, HolidayHelper   , Facebook , #Compassion #HolidaySupport                   ,18,35, USA      ,2015,12,22,14
+131,133, Tenderness in the warmth of a cozy winter evening.     , Tenderness    ,2/10/2016 19:45, WinterWarmth    , Twitter  , #Tenderness #CozyEvening                     ,25,50, UK       ,2016,2,10,19
+132,134, Arousal of excitement for an upcoming adventure.       , Arousal       ,4/30/2017 11:30, AdventureAwaits , Instagram , #Arousal #AdventureTime                       ,20,40, Australia ,2017,4,30,11
+133,135, Enthusiasm for a creative project in the making.       , Enthusiasm    ,9/15/2018 16:00, CreativeSpirit  , Facebook , #Enthusiasm #Creativity                       ,15,30, Canada    ,2018,9,15,16
+134,136, Fulfillment in completing a challenging workout routine., Fulfillment  ,6/28/2019 18:20, FitnessAchiever , Twitter  , #Fulfillment #FitnessGoals                   ,22,45, India     ,2019,6,28,18
+135,137, Reverence for the artistry displayed in a museum.      , Reverence     ,11/11/2020 15:00, ArtAppreciator  , Instagram , #Reverence #ArtAppreciation                  ,18,35, UK        ,2020,11,11,15
+136,138, Elation after achieving a personal goal.               , Elation       ,3/2/2021 9:30, GoalAchiever2   , Facebook , #Elation #PersonalAchievement                ,25,50, USA      ,2021,3,2,9
+137,139, Elation over discovering a hidden gem in the city.   , Elation       ,2/18/2012 14:30, UrbanExplorer2  , Twitter  , #Elation #HiddenGem                            ,20,40, USA      ,2012,2,18,14
+138,140, The euphoria of a surprise birthday celebration.     , Euphoria      ,11/5/2018 21:45, BirthdayJoy     , Instagram , #Euphoria #BirthdaySurprise                   ,15,30, UK   ,2018,11,5,21
+139,141, Contentment in the simplicity of a home-cooked meal. , Contentment   ,9/12/2015 13:20, HomeChef        , Facebook , #Contentment #HomeCooking                     ,25,50, India    ,2015,9,12,13
+140,142, Serenity found in the melody of a peaceful piano.    , Serenity      ,7/30/2016 18:10, MusicLover4     , Twitter  , #Serenity #PeacefulMelody                    ,18,35, Canada      ,2016,7,30,18
+141,143, Gratitude for the supportive community around me.    , Gratitude     ,4/20/2013 10:30, CommunityLove   , Instagram , #Gratitude #CommunitySupport                   ,30,60, USA ,2013,4,20,10
+142,144, Hopeful about the prospects of a new business venture., Hope          ,12/8/2017 19:15, EntrepreneurHope, Facebook , #Hope #BusinessVenture                        ,22,45, Canada    ,2017,12,8,19
+143,145, Empowerment through mentoring and guiding others.    , Empowerment   ,6/3/2014 8:20, MentorEmpower   , Twitter  , #Empowerment #Mentorship                      ,15,30, UK       ,2014,6,3,8
+144,146, Compassion shown through acts of kindness in the community., Compassion,1/15/2019 14:50, KindnessInAction, Instagram , #Compassion #CommunityKindness               ,18,35, Australia ,2019,1,15,14
+145,147, Tenderness in a heartfelt message to a loved one.    , Tenderness    ,12/25/2016 19:30, LoveExpress     , Facebook , #Tenderness #LoveNote                         ,25,50, UK          ,2016,12,25,19
+146,148, Arousal of excitement before a much-awaited trip.    , Arousal       ,3/10/2018 9:45, TravelExcitement, Twitter  , #Arousal #TravelAdventure                     ,20,40, India    ,2018,3,10,9
+147,149, Enthusiasm for a new artistic project in the works.  , Enthusiasm    ,9/17/2020 16:30, ArtisticSpirit  , Instagram , #Enthusiasm #ArtisticProject                 ,15,30, USA       ,2020,9,17,16
+148,150, Feeling a sense of fulfillment after helping others. , Fulfillment   ,8/28/2011 18:45, HelperHeart     , Facebook , #Fulfillment #HelpingOthers                  ,22,45, Canada    ,2011,8,28,18
+149,151, Reverence for the historical significance of a landmark., Reverence ,11/1/2017 15:30, HistoryBuff     , Twitter  , #Reverence #HistoricalSite                   ,18,35, Australia ,2017,11,1,15
+150,152, Elation after achieving a fitness milestone.         , Elation       ,6/15/2019 10:00, FitnessAchiever2, Instagram , #Elation #FitnessMilestone                   ,25,50, UK           ,2019,6,15,10
+151,153, The euphoria of a successful product launch.         , Euphoria      ,4/3/2022 11:45, ProductLaunchJoy, Facebook , #Euphoria #ProductLaunchSuccess              ,15,30, USA       ,2022,4,3,11
+152,154, Contentment in the embrace of a loved one.           , Contentment   ,11/12/2010 20:20, LovingEmbrace   , Twitter  , #Contentment #Love                             ,30,60, India    ,2010,11,12,20
+153,155, Serenity found in the beauty of a sunset by the sea.  , Serenity      ,7/22/2011 18:30, SunsetWatcher2  , Instagram , #Serenity #SunsetViews                       ,22,45, Canada     ,2011,7,22,18
+154,156, Gratitude for the small joys that each day brings.   , Gratitude     ,3/30/2012 11:20, JoyfulHeart2    , Facebook , #Gratitude #SmallJoys                        ,15,30, Australia   ,2012,3,30,11
+155,157, Hopeful about the potential for personal growth.      , Hope          ,10/5/2013 16:40, GrowthOptimist  , Twitter  , #Hope #PersonalDevelopment                    ,18,35, UK       ,2013,10,5,16
+156,158, Empowerment through learning a new skill.            , Empowerment   ,7/10/2014 13:15, SkillEmpower    , Instagram , #Empowerment #SkillBuilding                   ,25,50, India   ,2014,7,10,13
+157,159, Compassion in volunteering for a local charity.       , Compassion    ,12/18/2015 14:20, CharityVolunteer, Facebook , #Compassion #VolunteerWork                   ,18,35, USA      ,2015,12,18,14
+158,160, Tenderness in a quiet moment shared with a pet.      , Tenderness    ,2/10/2016 19:45, PetLove         , Twitter  , #Tenderness #PetLove                          ,25,50, Canada   ,2016,2,10,19
+159,161, Arousal of excitement for an upcoming festival.       , Arousal       ,9/25/2017 11:30, FestivalFan     , Instagram , #Arousal #FestivalExcitement               ,20,40, UK ,2017,9,25,11
+160,162, Enthusiasm for a DIY home improvement project.       , Enthusiasm    ,4/15/2018 16:00, DIYEnthusiast   , Facebook , #Enthusiasm #HomeImprovement                 ,15,30, Australia   ,2018,4,15,16
+161,163, Fulfillment in completing a challenging puzzle.      , Fulfillment   ,11/28/2019 18:20, PuzzleMaster    , Twitter  , #Fulfillment #PuzzleChallenge                ,22,45, India    ,2019,11,28,18
+162,164, Reverence for the wonders of nature on a hiking trail., Reverence ,5/11/2020 15:00, NatureAdmirer   , Instagram , #Reverence #NatureExploration                ,18,35, USA        ,2020,5,11,15
+163,165, Elation after a surprise reunion with a childhood friend., Elation   ,2/5/2021 9:30, ChildhoodJoy    , Facebook , #Elation #FriendshipReunion                  ,25,50, Canada      ,2021,2,5,9
+164,166, Suffering from despair after another setback.      , Despair         ,3/10/2021 8:30, StrugglingSoul    , Twitter  , #Despair #Struggle                              ,5,10, USA          ,2021,3,10,8
+165,167," Overwhelmed by grief, missing a loved one dearly.  ", Grief           ,7/5/2022 15:45, MourningHeart     , Instagram , #Grief #Loss                                   ,8,15, Canada          ,2022,7,5,15
+166,168, Loneliness creeps in as the night grows colder.    , Loneliness      ,11/18/2019 21:20, SolitarySoul      , Facebook , #Loneliness #Isolation                         ,10,20, UK           ,2019,11,18,21
+167,169, Jealousy consumes me as I witness others' success. , Jealousy        ,8/12/2020 11:30, EnviousObserver   , Twitter  , #Jealousy #Envy                               ,12,25, India        ,2020,8,12,11
+168,170, Resentment building up over past betrayals.        , Resentment      ,5/22/2018 14:45, BitterHeart       , Instagram , #Resentment #Bitterness                       ,7,15, Australia     ,2018,5,22,14
+169,171, Frustration mounts as obstacles block my path.     , Frustration     ,1/30/2017 16:10, BlockedGoals      , Facebook , #Frustration #Obstacles                       ,10,20, USA          ,2017,1,30,16
+170,172," Boredom sets in, the day feels endlessly dull.     ", Boredom         ,9/28/2016 19:45, BoredMind         , Twitter  , #Boredom #LackOfInterest                     ,8,15, Canada        ,2016,9,28,19
+171,173," Anxiety grips my heart, worry clouds my thoughts.  ", Anxiety         ,4/15/2019 9:00, WorriedMind       , Instagram , #Anxiety #Worry                               ,12,25, UK           ,2019,4,15,9
+172,174, Intimidation by the unknown future ahead.          , Intimidation    ,12/3/2021 18:30, FearfulSoul       , Facebook , #Intimidation #Fear                           ,15,30, India        ,2021,12,3,18
+173,175, Helplessness sinks in as challenges pile up.       , Helplessness    ,6/20/2020 14:20, OverwhelmedHeart  , Twitter  , #Helplessness #Overwhelmed                    ,8,15, Australia    ,2020,6,20,14
+174,176, Envy eats away at me as I see others' prosperity.  , Envy            ,11/7/2018 11:30, CovetousMind     , Instagram , #Envy #Desire                                ,10,20, Canada        ,2018,11,7,11
+175,177, Regret over missed opportunities haunts my thoughts., Regret         ,8/25/2017 16:00, RemorsefulSoul   , Facebook , #Regret #MissedChances                       ,12,25, UK           ,2017,8,25,16
+176,178, Disgust at the sight of injustice and cruelty.     , Disgust         ,2/11/2019 9:45, DisgustedHeart   , Twitter  , #Disgust #Injustice                          ,7,15, India        ,2019,2,11,9
+177,179," Drowning in despair, hope slipping through my fingers.", Despair      ,4/2/2016 20:20, HopelessHeart    , Instagram , #Despair #Hopeless                           ,10,20, USA          ,2016,4,2,20
+178,180," Grief weighs heavy, tears a constant companion.    ", Grief           ,10/18/2015 15:30, TearfulSoul      , Facebook , #Grief #Tears                                ,12,25, Canada        ,2015,10,18,15
+179,181," Loneliness in a crowded room, a silent cry for connection.", Loneliness ,7/12/2019 18:10, IsolatedMind     , Twitter  , #Loneliness #SeekingConnection              ,15,30, UK            ,2019,7,12,18
+180,182," Jealousy gnaws at my confidence, a toxic emotion.  ", Jealousy        ,6/3/2018 16:30, SelfDoubt        , Instagram , #Jealousy #Insecurity                       ,8,15, India         ,2018,6,3,16
+181,183," Resentment festers, poisoning relationships.       ", Resentment      ,1/15/2022 12:00, BrokenTrust      , Facebook , #Resentment #BrokenTrust                     ,10,20, Australia    ,2022,1,15,12
+182,184," Frustration boils over, a volcanic eruption of emotions.", Frustration ,4/10/2017 14:45, ExplosiveMind    , Twitter  , #Frustration #EmotionalOutburst             ,12,25, USA          ,2017,4,10,14
+183,185," Boredom settles like dust, life feels mundane.     ", Boredom         ,11/28/2016 19:00, MundaneHeart     , Instagram , #Boredom #Monotony                          ,7,15, Canada        ,2016,11,28,19
+184,186," Anxiety grips my chest, a relentless grip on my thoughts.", Anxiety   ,9/5/2018 9:30, RestlessMind     , Facebook , #Anxiety #Restlessness                      ,10,20, UK            ,2018,9,5,9
+185,187," Intimidation by the challenges ahead, fear takes hold.", Intimidation ,10/22/2021 18:30, FearfulJourney   , Twitter  , #Intimidation #FacingFear                   ,15,30, India         ,2021,10,22,18
+186,188," Helplessness engulfs me, drowning in a sea of problems.", Helplessness ,5/8/2019 14:20, OverwhelmedSoul  , Instagram , #Helplessness #Struggling                   ,8,15, Australia    ,2019,5,8,14
+187,189," Envy poisons my thoughts, coveting others' success.", Envy            ,3/20/2017 11:30, GreenEyedMonster , Facebook , #Envy #Success                              ,10,20, Canada        ,2017,3,20,11
+188,190, Regret for decisions that led to a painful present., Regret         ,12/15/2018 16:00, RegretfulMind    , Twitter  , #Regret #PastChoices                        ,12,25, USA          ,2018,12,15,16
+189,191, Disgust at the corruption that stains society.     , Disgust         ,7/1/2016 9:45, CorruptedHeart   , Instagram , #Disgust #Corruption                        ,7,15, UK            ,2016,7,1,9
+190,192," Sinking in despair, each day darker than the last. ", Despair         ,8/20/2020 20:20, DrowningSoul     , Facebook , #Despair #DarkDays                          ,10,20, India         ,2020,8,20,20
+191,193," Grief overwhelms, a storm of emotions within.      ", Grief           ,2/25/2021 15:30, StormyHeart      , Twitter  , #Grief #EmotionalStorm                      ,12,25, Canada        ,2021,2,25,15
+192,194," Loneliness echoes in empty spaces, yearning for connection.", Loneliness ,9/12/2019 18:10, EchoingSoul     , Instagram , #Loneliness #YearningForConnection         ,15,30, Australia     ,2019,9,12,18
+193,195," Jealousy poisons my thoughts, resentment brewing within.", Jealousy    ,8/5/2018 16:30, PoisonedMind    , Facebook , #Jealousy #Resentment                       ,8,15, USA           ,2018,8,5,16
+194,196," Resentment festers, a wound that refuses to heal.  ", Resentment      ,1/12/2017 12:00, UnforgivingSoul  , Twitter  , #Resentment #Unforgiving                    ,10,20, India         ,2017,1,12,12
+195,197," Frustration escalates, a thunderstorm of emotions. ", Frustration     ,4/5/2022 14:45, ThunderingMind   , Instagram , #Frustration #EmotionalOutburst            ,12,25, UK            ,2022,4,5,14
+196,198," Boredom lingers, a stagnant pool of indifference.  ", Boredom         ,10/2/2021 19:00, StagnantHeart    , Facebook , #Boredom #Stagnation                        ,7,15, Canada        ,2021,10,2,19
+197,199," Embarking on a journey of discovery, fueled by curiosity and a thirst for knowledge. ", Curiosity       ,4/15/2023 10:15, InquisitiveMind   , Twitter  , #Curiosity #Learning                        ,15,30, USA          ,2023,4,15,10
+198,200," Lost in the vast sea of information, an indifferent wave in the digital ocean. ", Indifference    ,11/28/2022 17:30, ApatheticObserver , Instagram , #Indifference #DigitalOverload              ,7,15, Canada          ,2022,11,28,17
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
