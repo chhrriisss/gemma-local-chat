@@ -1,7 +1,8 @@
-# Virtual Environment
+# Virtual environments
 .venv/
 venv/
 env/
+gemma_env/
 
 # Python
 __pycache__/
@@ -24,3 +25,12 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+
+# Hugging Face / fine-tuning
+qwen_excel_gpu/checkpoint-*/
+qwen_excel_reasoning_gpu/checkpoint-*/
+*.bin
+*.pt
+*.safetensors
+*.h5
+hf_cache/
